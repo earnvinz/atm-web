@@ -1,10 +1,20 @@
 package th.ac.ku.Model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class BankAccount {
+    @Id
     private int id;
+
     private int customerId;
     private String type;
     private double balance;
+
+    public BankAccount() {
+
+    }
 
     public BankAccount(int id, int customerId, String type, double balance) {
         this.id = id;

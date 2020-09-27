@@ -8,6 +8,7 @@ import th.ac.ku.Model.BankAccount;
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Service
 public class BankAccountService {
@@ -23,10 +24,11 @@ public class BankAccountService {
     }
     public BankAccount findCustomer(int id) {
         try {
-            return repository.findById(id);
-        } catch (EmptyResultDataAccessException e) {
+            return repository.findById(id).get();
+        } catch (NoSuchElementException e) {
             return null;
         }
+
     }
 
 
