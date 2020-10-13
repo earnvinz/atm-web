@@ -1,23 +1,16 @@
-package th.ac.ku.Model;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+package th.ac.ku.atm.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-@Entity
 public class BankAccount {
-    @Id
     private int id;
-
     private int customerId;
     private String type;
     private double balance;
 
     public BankAccount() {
-
     }
 
     public BankAccount(int id, int customerId, String type, double balance) {
